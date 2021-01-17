@@ -1,22 +1,24 @@
+<h2>Sign Up</h2>
+
 <%= form_with model: @user do |f| %>
 
-    <%= f.label :name %> <br>
-    <%= f.text_field :name %> <br><br>
+    <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name %> <br><br>
 
-    <%= f.label 'Height (in inches)' %> <br>
-    <%= f.number_field :height %> <br><br>
+    <%= f.label :last_name %> <br>
+    <%= f.text_field :last_name %> <br><br>
 
-    <%= f.label 'How happy are you? (1-5 scale)' %> <br>
-    <%= f.number_field :happiness, in: 1..5 %> <br><br>
+    <%= f.label :role %> <br>
+    <%= f.select :role, ["Supervisor", "Lead", "Project Manager", "Employee"], include_blank: true %> <br><br>
 
-    <%= f.label 'How nauseous are you? (1-5 scale)' %> <br>
-    <%= f.number_field :nausea, in: 1..5 %> <br><br>
-
-    <%= f.label 'How many dollars are in your pocket?' %> <br>
-    <%= f.number_field :tickets %> <br><br>
+    <%= f.label :email %> <br>
+    <%= f.email_field :email %> <br><br>
 
     <%= f.label :password %>
     <%= f.password_field :password %> <br><br>
 
     <%= f.submit %>
 <% end %>
+
+<br><br>
+<%= button_to "Log in with Google", "/auth/google_oauth2"%>

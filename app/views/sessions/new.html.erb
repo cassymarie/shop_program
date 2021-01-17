@@ -1,7 +1,10 @@
-<%= form_for @user, url: signin_path, method: :post do |f| %>
-    <%= f.label :name %>  <%= f.text_field :email  %> <br><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+<h2>Log In</h2>
 
+<%= form_for @user, url: signin_path, method: :post do |f| %>
+    <%= f.label :email %>  <%= f.text_field :email  %> <br><br>
+    <%= f.label :password %><%= f.password_field :password %>
     <%= f.submit 'Sign In' %>
 <% end %>
+
+<br><br>
+<%= button_to "Log in with Google", "/auth/google_oauth2"%>
