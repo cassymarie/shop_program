@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shop Program</title></title>
+    <title>ShopProgram</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,19 @@
   </head>
 
   <body>
-    <%= yield %>
+      <header>
+           <h1> Shop Program </h1>
+          <div class="nav-bar" style="display:inline;">
+            <p> 
+              <%= link_to "|___( SIGN UP )___|", new_user_path %> 
+              <%= link_to "___( LOG IN )___|", signin_path %>
+              <%= link_to "___( LOG OUT )___|", signout_path, method: 'post' %>
+            </p>
+          </div>
+      </header>
+      <hr>
+      <div class="main_page">
+          <%= yield %>
+      </div>
   </body>
 </html>
