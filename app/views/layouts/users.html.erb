@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShopProgram</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <header>
+           <h1> Shop Program (Users) </h1>
+          <div class="nav-bar" style="display:inline;">
+            <p> 
+              <%= link_to "|___( HOME )___|", user_path(@current_user) %> 
+              <%= link_to "___( LOG OUT )___|", signout_path, method: 'post' %>
+              [<%= @current_user.role %>] <%= @current_user.first_name %> <%= @current_user.last_name[0].capitalize %> 
+            </p>
+          </div>
+      </header>
+      <hr>
+      <div class="main_page">
+          <%= yield %>
+      </div>
+  </body>
+</html>
